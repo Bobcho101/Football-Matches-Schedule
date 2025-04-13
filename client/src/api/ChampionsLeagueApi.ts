@@ -11,26 +11,28 @@ export const useFetchChampionsLeagueMatches = () => {
     useEffect(() => {
         const url: string = 'https://api.football-data.org/v4/competitions/CL/matches?status=SCHEDULED';
         const fetchData = async () => {
-            try{
-                const response = await fetch(url, {
-                    headers: {
-                        'X-Auth-Token': API_KEY,
-                    },
-                });
-
+            fetch(url, {
+                headers: {
+                    'X-Auth-Token': API_KEY,
+                },
+            })
+            .then((response) => {
                 if(!response.ok){
                     throw new Error(errorMessages.failedFetch);
                 }
-                const res: object = await response.json();
-                setData(res);
-            } catch (err: any) {
-                console.log(err);
+                return response.json();
+            })
+            .then((data) => setData(data))
+            .catch((err) => {
                 setError(err.message);
-            } finally {
-                setLoading(false); 
-            }
-        } 
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+        }
         fetchData();
     }, []);
+
     return { data, loading, error };
 }
+
