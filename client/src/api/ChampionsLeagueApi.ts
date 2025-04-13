@@ -9,7 +9,7 @@ export const useFetchChampionsLeagueMatches = () => {
     const [error, setError] = useState<string| null>(null);
 
     useEffect(() => {
-        const url: string = 'https://api.football-data.org/v4/competitions/CL/matches?status=SCHEDULED';
+        const url: string = `http://localhost:5000/matches/cl/${API_KEY}`;
         const fetchData = async () => {
             fetch(url, {
                 headers: {
