@@ -17,7 +17,7 @@ const ChampionsLeagueTable: React.FC = () => {
             <>
                 <div key={match.id} className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300">
                     <div className="text-center text-xl font-semibold text-gray-700 mb-2">
-                       {match.homeTeam.shortName} <span className="text-sm text-gray-500">vs</span> {match.awayTeam.name}
+                       {match.homeTeam.shortName} <span className="text-sm text-gray-500">vs</span> {match.awayTeam.shortName}
                     </div>
                     <div className="text-center text-sm text-gray-500">Fri, 12 Apr 2025</div>
                     <div className="text-center text-base font-medium text-gray-600">18:30</div>
