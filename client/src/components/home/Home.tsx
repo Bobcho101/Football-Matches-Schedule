@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Home() {
+const Home: React.FC = () => {
     const navigate = useNavigate();
     const navigateToLeague = (name: string) => {
         navigate(`/league/${name}`);
@@ -27,4 +27,7 @@ export default function Home() {
         </div>
         </>  
     );
-}
+};
+
+
+export default Home;

@@ -22,7 +22,10 @@ export const useFetchChampionsLeagueMatches = () => {
                 }
                 return response.json();
             })
-            .then((data) => setData(data))
+            .then((data) => {
+                data = data.matches;
+                return setData(data)
+            })
             .catch((err) => {
                 setError(err.message);
             })
