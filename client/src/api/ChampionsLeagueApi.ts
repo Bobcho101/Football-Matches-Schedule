@@ -4,7 +4,7 @@ import { errorMessages } from "../utils/errorMessages";
 
 
 export const useFetchChampionsLeagueMatches = () => {
-    const [data, setData] = useState<object>({});
+    const [data, setData] = useState<object[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string| null>(null);
 
@@ -24,6 +24,7 @@ export const useFetchChampionsLeagueMatches = () => {
             })
             .then((data) => {
                 data = data.matches;
+                data = Object.values(data)
                 return setData(data)
             })
             .catch((err) => {
