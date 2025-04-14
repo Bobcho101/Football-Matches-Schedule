@@ -15,6 +15,7 @@ interface Match{
     homeTeam: HomeTeam;
     awayTeam: AwayTeam;
     id: number;
+    utcDate: Date,
 }
 
 export const useFetchChampionsLeagueMatches = () => {
