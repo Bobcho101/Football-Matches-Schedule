@@ -2,11 +2,25 @@ import { useEffect, useState } from "react";
 import { API_KEY } from "../constants";
 import { errorMessages } from "../utils/errorMessages";
 
+interface HomeTeam{
+    shortName: string;
+    id: number;
+}
+
+interface AwayTeam{
+    shortName: string;
+    id: number;
+}
+interface Match{
+    homeTeam: HomeTeam;
+    awayTeam: AwayTeam;
+    id: number;
+}
 
 export const useFetchChampionsLeagueMatches = () => {
-    const [data, setData] = useState<object[]>([]);
+    const [matches, setMatches] = useState<Match[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string| null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const url: string = `http://localhost:5000/matches/cl/${API_KEY}`;
@@ -25,7 +39,7 @@ export const useFetchChampionsLeagueMatches = () => {
             .then((data) => {
                 data = data.matches;
                 data = Object.values(data)
-                return setData(data)
+                return setMatches(data)
             })
             .catch((err) => {
                 setError(err.message);
@@ -37,6 +51,6 @@ export const useFetchChampionsLeagueMatches = () => {
         fetchData();
     }, []);
 
-    return { data, loading, error };
+    return { matches, loading, error };
 }
 
