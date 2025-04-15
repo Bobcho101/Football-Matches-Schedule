@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 const Home: React.FC = () => {
     const navigate = useNavigate();
     const navigateToLeague = (name: string) => {
-        navigate(`/league/${name}`);
+        return navigate(`/league/${name}`);
     }
-    
+
     return (
         <>
         <div className="flex flex-col items-center justify-center h-screen bg-gray-800">
