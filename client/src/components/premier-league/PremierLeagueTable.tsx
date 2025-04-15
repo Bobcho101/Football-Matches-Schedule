@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useFetchMatches } from "../../api/matchesApi";
 import React from "react";
+import { setDocumentTitle } from "../../utils/document";
 
 
 const PremierLeagueTable: React.FC = () => {
+    setDocumentTitle("Premier League");
     const { matches, loading, error } = useFetchMatches("pl");
     const navigate = useNavigate();
 
