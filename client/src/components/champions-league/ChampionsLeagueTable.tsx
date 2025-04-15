@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useFetchMatches } from "../../api/ChampionsLeagueApi";
+import { useFetchMatches } from "../../api/matchesApi";
 import React from "react";
 
 

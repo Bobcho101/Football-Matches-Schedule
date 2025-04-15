@@ -18,7 +18,7 @@ interface Match{
     utcDate: Date,
 }
 
-type League = "cl" | "pr";
+type League = "cl" | "pl";
 
 export const useFetchMatches = (league: League) => {
     const [matches, setMatches] = useState<Match[]>([]);
