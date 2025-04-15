@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useFetchChampionsLeagueMatches } from "../../api/ChampionsLeagueApi";
+import { useFetchMatches } from "../../api/ChampionsLeagueApi";
 import React from "react";
 
 
 const ChampionsLeagueTable: React.FC = () => {
-    const { matches, loading, error } = useFetchChampionsLeagueMatches();
+    const { matches, loading, error } = useFetchMatches("cl");
     const navigate = useNavigate();
 
     const navigateToHome = () => {

@@ -18,13 +18,15 @@ interface Match{
     utcDate: Date,
 }
 
-export const useFetchChampionsLeagueMatches = () => {
+type League = "cl" | "pr";
+
+export const useFetchMatches = (league: League) => {
     const [matches, setMatches] = useState<Match[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const url: string = `http://localhost:5000/matches/cl/${API_KEY}`;
+        const url: string = `http://localhost:5000/matches/${league}/${API_KEY}`;
         const fetchData = async () => {
             fetch(url, {
                 headers: {
@@ -52,7 +54,7 @@ export const useFetchChampionsLeagueMatches = () => {
             });
         }
         fetchData();
-    }, []);
+    }, [league]);
 
     return { matches, loading, error };
 }
