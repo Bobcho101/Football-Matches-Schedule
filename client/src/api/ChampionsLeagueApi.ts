@@ -32,6 +32,8 @@ export const useFetchChampionsLeagueMatches = () => {
                 },
             })
             .then((response) => {
+                console.log(response);
+                
                 if(!response.ok){
                     throw new Error(errorMessages.failedFetch);
                 }
@@ -42,8 +44,8 @@ export const useFetchChampionsLeagueMatches = () => {
                 data = Object.values(data)
                 return setMatches(data)
             })
-            .catch((err) => {
-                setError(err.message);
+            .catch(() => {
+                setError(errorMessages.failedFetch);
             })
             .finally(() => {
                 setLoading(false);

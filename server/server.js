@@ -19,6 +19,7 @@ app.get('/matches/cl/:apiKey', async (req, res) => {
         res.json(response.data);
     } catch (err) {
         console.log(err.message);
+        return res.status(404).json({ error: 'There was an error fetching the matches. Please try again later.' });
     }
 });
 

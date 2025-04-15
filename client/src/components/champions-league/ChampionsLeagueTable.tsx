@@ -1,15 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import { useFetchChampionsLeagueMatches } from "../../api/ChampionsLeagueApi";
 import React from "react";
 
 
 const ChampionsLeagueTable: React.FC = () => {
-    const { matches } = useFetchChampionsLeagueMatches(); 
 
     return (
+        <>
+        {loading && (
+            <div className="flex justify-center items-center min-h-screen bg-[url('/CL-bg.jpg')] bg-cover bg-center">
+                <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        )}
         <div className="p-6 bg-[url('/CL-bg.jpg')] bg-cover bg-center min-h-screen">
             <h2 className="text-3xl font-bold mb-6 text-white text-center">Upcoming Matches</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {matches.map((match) => { 
+            {!error && matches.map((match) => { 
                 if(match.homeTeam.shortName === null || match.awayTeam.shortName === null) return;
 
                 return(
@@ -35,6 +41,7 @@ const ChampionsLeagueTable: React.FC = () => {
                 )})}
             </div>
         </div>
+        </>
       );
 };
 

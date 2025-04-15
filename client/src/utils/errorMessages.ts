@@ -3,5 +3,5 @@ interface ErrorMessages {
 }
 
 export const errorMessages: ErrorMessages = {
-    failedFetch: 'Failed to fetch!',
+    failedFetch: 'There was an error fetching the matches. Please try again later.',
 };
