@@ -4,6 +4,7 @@ import ChampionsLeagueTable from './components/champions-league/ChampionsLeagueT
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/home/Home'
 import PremierLeagueTable from './components/premier-league/PremierLeagueTable'
+import LaLigaTable from './components/la-liga/LaLiga'
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/league/champions-league' element={<ChampionsLeagueTable />} />
             <Route path='/league/premier-league' element={<PremierLeagueTable />} />
+            <Route path='/league/la-liga' element={ <LaLigaTable />} />
         </Routes>
         </>
     )
