@@ -37,6 +37,20 @@ app.get('/matches/pl/:apiKey', async (req, res) => {
     }
 });
 
+app.get('/matches/ll/:apiKey', async (req, res) => {
+    const apiKey = req.params.apiKey;
+    try {
+        const response = await axios.get('https://api.football-data.org/v4/competitions/PD/matches?status=SCHEDULED', {
+            headers: {
+                'X-Auth-Token': apiKey, 
+            },
+        });
+        res.json(response.data);
+    } catch (err) {
+        console.log(err.message);
+    }
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
