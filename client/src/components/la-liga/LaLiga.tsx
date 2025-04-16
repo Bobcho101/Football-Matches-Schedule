@@ -20,12 +20,12 @@ const LaLigaTable: React.FC = () => {
     return (
         <>
         {loading && (
-            <div className="flex justify-center items-center min-h-screen bg-[url('/premier-bg.jpg')] bg-cover bg-center">
+            <div className="flex justify-center items-center min-h-screen bg-[url('/la-liga-bg.jpg')] bg-cover bg-center">
                 <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
             </div>
         )}
         { error && (
-            <div className="flex justify-center items-center min-h-screen bg-[url('/premier-bg.jpg')] bg-cover bg-center px-4">
+            <div className="flex justify-center items-center min-h-screen bg-[url('/la-liga-bg.jpg')] bg-cover bg-center px-4">
                 <div className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl text-center max-w-md w-full">
                     <h2 className="text-3xl font-extrabold text-red-600 mb-4">Oops! Something went wrong</h2>
                     <p className="text-gray-800 text-base mb-6">{error || "An unexpected error occurred. Please try again later."}</p>
@@ -38,7 +38,7 @@ const LaLigaTable: React.FC = () => {
                 </div>
             </div>
         )}
-        <div className="p-6 bg-[url('/premier-bg.jpg')] bg-center min-h-screen">
+        <div className="p-6 bg-[url('/la-liga-bg.jpg')] bg-center min-h-screen">
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <button onClick={() => navigateToLeague('champions-league')} className="px-6 py-3 text-lg cursor-pointer bg-blue-300 text-gray-800 rounded-lg shadow-md hover:bg-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200">
                     Champions League
@@ -59,7 +59,7 @@ const LaLigaTable: React.FC = () => {
                 if(match.homeTeam.shortName === null || match.awayTeam.shortName === null) return;
 
                 return(
-                    <div key={match.id} className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div key={match.id} className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-2xl hover:shadow-[0_10px_25px_rgba(0,0,0,0.3)] transition duration-300 border border-white/30 ring-1 ring-black/10">
                         <div className="text-center text-xl font-semibold text-gray-700 mb-2">
                         {match.homeTeam.shortName} <span className="text-sm text-gray-500">vs</span> {match.awayTeam.shortName}
                         </div>

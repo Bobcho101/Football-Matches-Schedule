@@ -59,7 +59,7 @@ const PremierLeagueTable: React.FC = () => {
                 if(match.homeTeam.shortName === null || match.awayTeam.shortName === null) return;
 
                 return(
-                    <div key={match.id} className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div key={match.id} className="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-2xl hover:shadow-[0_10px_25px_rgba(0,0,0,0.3)] transition duration-300 border border-white/30 ring-1 ring-black/10">
                         <div className="text-center text-xl font-semibold text-gray-700 mb-2">
                         {match.homeTeam.shortName} <span className="text-sm text-gray-500">vs</span> {match.awayTeam.shortName}
                         </div>
