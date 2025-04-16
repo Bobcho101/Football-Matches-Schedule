@@ -6,7 +6,7 @@ import Home from './components/home/Home'
 import PremierLeagueTable from './components/premier-league/PremierLeagueTable'
 import LaLigaTable from './components/la-liga/LaLiga'
 
-function App() {
+const App: React.FC = () => {
     return (
         <>
         <Routes>
