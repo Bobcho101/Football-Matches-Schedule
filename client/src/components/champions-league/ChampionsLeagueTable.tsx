@@ -3,6 +3,7 @@ import { useFetchMatches } from "../../api/matchesApi";
 import React from "react";
 import { setDocumentTitle } from "../../utils/document";
 import Error from "../error/error";
+import LoadingSpinner from "../loading/LoadingSpinner";
 
 
 const ChampionsLeagueTable: React.FC = () => {
@@ -16,11 +17,7 @@ const ChampionsLeagueTable: React.FC = () => {
 
     return (
         <>
-        {loading && (
-            <div className="flex justify-center items-center min-h-screen bg-[url('/CL-bg.jpg')] bg-cover bg-center">
-                <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-            </div>
-        )}
+        {loading && <LoadingSpinner />}
         { error && <Error error={error} />}
         <div className="p-6 bg-[url('/CL-bg.jpg')] bg-cover bg-center min-h-screen">
             <div className="flex flex-wrap justify-center gap-4 mb-8">
