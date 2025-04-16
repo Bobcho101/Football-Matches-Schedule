@@ -2,16 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useFetchMatches } from "../../api/matchesApi";
 import React from "react";
 import { setDocumentTitle } from "../../utils/document";
+import Error from "../error/error";
 
 
 const ChampionsLeagueTable: React.FC = () => {
     setDocumentTitle("Champions League");
     const { matches, loading, error } = useFetchMatches("cl");
     const navigate = useNavigate();
-
-    const navigateToHome = () => {
-        return navigate("/");
-    }
 
     const navigateToLeague = (name: string) => {
         return navigate(`/league/${name}`);
@@ -24,20 +21,7 @@ const ChampionsLeagueTable: React.FC = () => {
                 <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
             </div>
         )}
-        { error && (
-            <div className="flex justify-center items-center min-h-screen bg-[url('/CL-bg.jpg')] bg-cover bg-center px-4">
-                <div className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl text-center max-w-md w-full">
-                    <h2 className="text-3xl font-extrabold text-red-600 mb-4">Oops! Something went wrong</h2>
-                    <p className="text-gray-800 text-base mb-6">{error || "An unexpected error occurred. Please try again later."}</p>
-                    <button
-                    onClick={() => navigateToHome()}
-                    className="px-6 py-2 bg-gradient-to-r cursor-pointer from-gray-400 to-gray-600 text-white font-semibold rounded-lg hover:from-gray-500 hover:to-gray-700 transition duration-300"
-                    >
-                    Go back to the homepage
-                    </button>
-                </div>
-            </div>
-        )}
+        { error && <Error error={error} />}
         <div className="p-6 bg-[url('/CL-bg.jpg')] bg-cover bg-center min-h-screen">
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <button onClick={() => navigateToLeague('champions-league')} className="px-6 py-3 text-lg cursor-pointer bg-blue-300 text-gray-800 rounded-lg shadow-md hover:bg-blue-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-200">
