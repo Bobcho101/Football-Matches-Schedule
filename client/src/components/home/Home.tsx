@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { setDocumentTitle } from '../../utils/document';
 
 const Home: React.FC = () => {
+    setDocumentTitle('Home');
     const navigate = useNavigate();
     const navigateToLeague = (name: string) => {
         return navigate(`/league/${name}`);
