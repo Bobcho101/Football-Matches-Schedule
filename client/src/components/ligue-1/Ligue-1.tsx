@@ -6,7 +6,7 @@ import LoadingSpinner from "../loading/LoadingSpinner";
 import Navigation from "../navigation/Navigation";
 
 
-const ChampionsLeagueTable: React.FC = () => {
+const Ligue1Table: React.FC = () => {
     setDocumentTitle("Ligue 1");
     const { matches, loading, error } = useFetchMatches("l1");
 
@@ -14,7 +14,7 @@ const ChampionsLeagueTable: React.FC = () => {
         <>
         { loading && <LoadingSpinner />}
         { error && <Error error={error} />}
-        <div className="p-6 bg-[url('/CL-bg.jpg')] bg-cover bg-center min-h-screen">
+        <div className="p-6 bg-[url('/ligue-1-bg.jpg')] min-h-screen">
             <Navigation />
             <h2 className="text-4xl font-extrabold mb-6 text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Upcoming Matches</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -48,4 +48,4 @@ const ChampionsLeagueTable: React.FC = () => {
       );
 };
 
-export default ChampionsLeagueTable;
+export default Ligue1Table;
