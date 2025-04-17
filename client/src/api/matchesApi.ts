@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { API_KEY } from "../constants";
 import { errorMessages } from "../utils/errorMessages";
 
-const BASE_URL_MAIN_API: string = "https://api.football-data.org/v4/competitions";
-
 interface HomeTeam{
     shortName: string;
     id: number;
@@ -28,8 +26,7 @@ export const useFetchMatches = (league: League) => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        //const url: string = `http://localhost:5000/matches/${league}/${API_KEY}`;
-        const url: string = `${BASE_URL_MAIN_API}/${league}/matches?status=SCHEDULED`;
+        const url: string = `http://localhost:5000/matches/${league}/${API_KEY}`;
         const fetchData = async () => {
             fetch(url, {
                 headers: {
