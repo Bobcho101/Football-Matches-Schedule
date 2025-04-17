@@ -15,7 +15,7 @@ const Error: React.FC<Props> = ({ error }: Props) => {
         <>
         <div className="flex justify-center items-center min-h-screen bg-gray-800 px-4">
             <div className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl text-center max-w-md w-full">
-                <h2 className="text-3xl font-extrabold text-red-600 mb-4">Oops! Something went wrong</h2>
+                <h2 className="text-3xl font-extrabold text-red-600 mb-4">Something went wrong</h2>
                 <p className="text-gray-800 text-base mb-6">{error || "An unexpected error occurred. Please try again later."}</p>
                 <button
                 onClick={() => navigateToHome()}

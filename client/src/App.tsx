@@ -6,6 +6,7 @@ import Home from './components/home/Home'
 import PremierLeagueTable from './components/premier-league/PremierLeagueTable'
 import LaLigaTable from './components/la-liga/LaLiga'
 import Ligue1Table from './components/ligue-1/Ligue-1'
+import NotFound from './components/not-found/NotFound'
 
 const App: React.FC = () => {
     return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
             <Route path='/league/premier-league' element={<PremierLeagueTable />} />
             <Route path='/league/la-liga' element={ <LaLigaTable />} />
             <Route path='/league/ligue-1' element={<Ligue1Table />} />
+            <Route path='*' element={<NotFound />} />
         </Routes>
         </>
     )
