@@ -1,7 +1,7 @@
 import { useFetchMatches } from "../../api/matchesApi";
 import React from "react";
 import { setDocumentTitle } from "../../utils/document";
-import Error from "../error/error";
+import Error from "../error/Error";
 import LoadingSpinner from "../loading/LoadingSpinner";
 import Navigation from "../navigation/Navigation";
 
