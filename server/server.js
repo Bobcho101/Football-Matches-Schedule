@@ -8,7 +8,7 @@ const PORT = 5000;
 
 app.use(cors());
 
-app.get('/matches/cl/:apiKey', async (req, res) => {
+app.get('/matches/CL/:apiKey', async (req, res) => {
     const apiKey = req.params.apiKey;
     try {
         const response = await axios.get('https://api.football-data.org/v4/competitions/CL/matches?status=SCHEDULED', {
@@ -23,7 +23,7 @@ app.get('/matches/cl/:apiKey', async (req, res) => {
     }
 });
 
-app.get('/matches/pl/:apiKey', async (req, res) => {
+app.get('/matches/PL/:apiKey', async (req, res) => {
     const apiKey = req.params.apiKey;
     try {
         const response = await axios.get('https://api.football-data.org/v4/competitions/PL/matches?status=SCHEDULED', {
@@ -37,7 +37,7 @@ app.get('/matches/pl/:apiKey', async (req, res) => {
     }
 });
 
-app.get('/matches/ll/:apiKey', async (req, res) => {
+app.get('/matches/PD/:apiKey', async (req, res) => {
     const apiKey = req.params.apiKey;
     try {
         const response = await axios.get('https://api.football-data.org/v4/competitions/PD/matches?status=SCHEDULED', {
@@ -51,7 +51,7 @@ app.get('/matches/ll/:apiKey', async (req, res) => {
     }
 });
 
-app.get('/matches/l1/:apiKey', async (req, res) => {
+app.get('/matches/FL1/:apiKey', async (req, res) => {
     const apiKey = req.params.apiKey;
     try {
         const response = await axios.get('https://api.football-data.org/v4/competitions/FL1/matches?status=SCHEDULED', {

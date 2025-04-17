@@ -8,7 +8,7 @@ import Navigation from "../navigation/Navigation";
 
 const ChampionsLeagueTable: React.FC = () => {
     setDocumentTitle("Champions League");
-    const { matches, loading, error } = useFetchMatches("cl");
+    const { matches, loading, error } = useFetchMatches("CL");
 
     return (
         <>

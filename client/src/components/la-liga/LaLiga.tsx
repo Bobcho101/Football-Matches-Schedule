@@ -7,7 +7,7 @@ import Navigation from "../navigation/Navigation";
 
 const LaLigaTable: React.FC = () => {
     setDocumentTitle("Premier League");
-    const { matches, loading, error } = useFetchMatches("ll");
+    const { matches, loading, error } = useFetchMatches("PD");
 
     return (
         <>
