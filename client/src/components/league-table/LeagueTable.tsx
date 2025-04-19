@@ -6,7 +6,7 @@ import { setDocumentTitle } from "../../utils/documentUtils";
 import Error from "../error/Error";
 import { useFetchMatches } from "../../api/matchesApi";
 
-type League = "CL" | "PL" | "PD" | "FL1";
+type League = "CL" | "PL" | "PD" | "FL1" | "BL1";
 
 interface props {
     name: string;
@@ -17,7 +17,7 @@ interface props {
 
 const LeagueTable: React.FC<props> = ({ name, backgroundImg, backgroundCover, leagueId }) =>  {
     const { matches, loading, error } = useFetchMatches(leagueId);
-    
+
     useEffect(() => {
         setDocumentTitle(name);
     },[name]);
@@ -35,7 +35,9 @@ const LeagueTable: React.FC<props> = ({ name, backgroundImg, backgroundCover, le
             loading ? 
             <LoadingSpinner />
             : ( 
-            <div className={`p-6 bg-[url('/${backgroundImg}.jpg')] ${backgroundCover && 'bg-cover bg-center'} min-h-screen`}>
+            <div   
+            className={`p-6 min-h-screen ${backgroundCover ? 'bg-cover bg-center' : ''}`}
+            style={{ backgroundImage: `url('/${backgroundImg}.jpg')` }}>
                 <Navigation />
                 <h2 className="text-4xl font-extrabold mb-6 text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Upcoming Matches</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

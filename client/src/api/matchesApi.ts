@@ -3,7 +3,7 @@ import { API_KEY } from "../constants";
 import { errorMessages } from "../utils/errorMessagesUtils";
 
 
-type League = "CL" | "PL" | "PD" | "FL1";
+type League = "CL" | "PL" | "PD" | "FL1" | "BL1";
 
 interface HomeTeam{
     shortName: string;

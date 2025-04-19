@@ -15,6 +15,7 @@ const App: React.FC = () => {
             <Route path='/league/premier-league' element={<LeagueTable name='Premier League' backgroundImg='premier-bg' backgroundCover={false} leagueId='PL' />} />
             <Route path='/league/la-liga' element={<LeagueTable name='La Liga' backgroundImg='la-liga-bg' backgroundCover={false} leagueId='PD' />} />
             <Route path='/league/ligue-1' element={<LeagueTable name='Ligue 1' backgroundImg='ligue-1-bg' backgroundCover={false} leagueId='FL1' />} />
+            <Route path='/league/bundesliga' element={<LeagueTable name='Bundesliga' backgroundImg='bundesliga-bg' backgroundCover={false} leagueId='BL1' />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
         </>
