@@ -29,7 +29,7 @@ export const useFetchMatches = (league: League) => {
     const [ error, setError ] = useState<string | null>(null);
 
     useEffect(() => {
-        const url: string = `http://localhost:5000/matches/${league}/${API_KEY}`;
+        const url: string = `https://football-matches-schedule-1.onrender.com/matches/${league}/${API_KEY}`;
         const fetchData = async () => {
             fetch(url, {
                 headers: {
