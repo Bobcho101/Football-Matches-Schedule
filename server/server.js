@@ -65,6 +65,20 @@ app.get('/matches/FL1/:apiKey', async (req, res) => {
     }
 });
 
+app.get('/matches/BL1/:apiKey', async (req, res) => {
+    const apiKey = req.params.apiKey;
+    try {
+        const response = await axios.get('https://api.football-data.org/v4/competitions/BL1/matches?status=SCHEDULED', {
+            headers: {
+                'X-Auth-Token': apiKey, 
+            },
+        });
+        res.json(response.data);
+    } catch (err) {
+        console.log(err.message);
+    }
+});
+
 
 
 app.listen(PORT, () => {
