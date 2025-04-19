@@ -16,10 +16,10 @@ const LaLigaTable: React.FC = () => {
 
     return (
         <>
-        { loading && <LoadingSpinner />}
-        { error && <Error error={error} />}
-        { !error && (
-            <div className="p-6 bg-[url('/la-liga-bg.jpg')] bg-center min-h-screen">
+        { error 
+        ? <Error error={error} />
+        : ( loading ? <LoadingSpinner /> 
+        : (<div className="p-6 bg-[url('/la-liga-bg.jpg')] bg-center min-h-screen">
             <Navigation />
             <h2 className="text-4xl font-extrabold mb-6 text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Upcoming Matches</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -48,8 +48,7 @@ const LaLigaTable: React.FC = () => {
                 : <NoMatchesAvailable />
             }
             </div>
-        </div>
-        )}
+        </div>))}
         </>
       );
 };
