@@ -17,6 +17,7 @@ const App: React.FC = () => {
             <Route path='/' element={<Home />} />
             <Route path='/league/champions-league' element={<LeagueTable name='Champions League' backgroundImg='CL-bg' backgroundCover={true} leagueId='CL' />} />
             <Route path='/league/premier-league' element={<LeagueTable name='Premier League' backgroundImg='premier-bg' backgroundCover={false} leagueId='PL' />} />
+            <Route path='/league/la-liga' element={<LeagueTable name='La Liga' backgroundImg='la-liga-bg' backgroundCover={false} leagueId='PD' />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
         </>

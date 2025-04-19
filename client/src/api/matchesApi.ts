@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { API_KEY } from "../constants";
-import { errorMessages } from "../utils/errorMessages";
+import { errorMessages } from "../utils/errorMessagesUtils";
 
 
 type League = "CL" | "PL" | "PD" | "FL1";

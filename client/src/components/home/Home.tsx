@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { setDocumentTitle } from '../../utils/document';
+import { setDocumentTitle } from '../../utils/documentUtils';
 
 const Home: React.FC = () => {
     setDocumentTitle('Home');

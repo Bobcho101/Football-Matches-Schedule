@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import NoMatchesAvailable from "../no-matches-available/NoMatchesAvailable";
 import Navigation from "../navigation/Navigation";
 import LoadingSpinner from "../loading/LoadingSpinner";
-import { setDocumentTitle } from "../../utils/document";
+import { setDocumentTitle } from "../../utils/documentUtils";
 import Error from "../error/Error";
 import { useFetchMatches } from "../../api/matchesApi";
 
@@ -17,12 +17,13 @@ interface props {
 
 const LeagueTable: React.FC<props> = ({ name, backgroundImg, backgroundCover, leagueId }) =>  {
     const { matches, loading, error } = useFetchMatches(leagueId);
+    
     useEffect(() => {
         setDocumentTitle(name);
     },[name]);
 
-     const validMatches = useMemo(() => {
-            return matches.filter((match) => match.homeTeam.shortName !== null && match.awayTeam.shortName !== null);
+    const validMatches = useMemo(() => {
+        return matches.filter((match) => match.homeTeam.shortName !== null && match.awayTeam.shortName !== null);
     }, [matches]);
 
     return (

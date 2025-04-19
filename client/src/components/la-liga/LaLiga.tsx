@@ -1,6 +1,6 @@
 import { useFetchMatches } from "../../api/matchesApi";
 import React, { useMemo } from "react";
-import { setDocumentTitle } from "../../utils/document";
+import { setDocumentTitle } from "../../utils/documentUtils";
 import Error from "../error/Error";
 import LoadingSpinner from "../loading/LoadingSpinner";
 import Navigation from "../navigation/Navigation";
