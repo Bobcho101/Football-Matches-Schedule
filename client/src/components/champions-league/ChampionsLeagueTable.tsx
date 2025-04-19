@@ -4,6 +4,7 @@ import { setDocumentTitle } from "../../utils/document";
 import Error from "../error/Error";
 import LoadingSpinner from "../loading/LoadingSpinner";
 import Navigation from "../navigation/Navigation";
+import NoMatchesAvailable from "../no-matches-available/NoMatchesAvailable";
 
 
 const ChampionsLeagueTable: React.FC = () => {
@@ -43,10 +44,7 @@ const ChampionsLeagueTable: React.FC = () => {
                         })}
                     </div>
                 </div>     
-                )) :(
-                <div className="text-white text-xl font-semibold col-span-full text-center mt-10">
-                    No upcoming matches available.
-                </div>)
+                )) : <NoMatchesAvailable />
                 }
                 </div>
             </div>)}
