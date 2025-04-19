@@ -5,6 +5,7 @@
 
 ## Notes
 - **The main point of this project is learn to work with bigger APIs**
+- **The API requests are limited (*around 10 requests per minute*)**
 - **There is a problem with the API and sometimes it does not fetch anything and the client says that there are no matches available**
 - **I didn't do the API requests directly to the main API so because CORS error was thrown (*for no reason*) so i used a server that fetches the data and send it to the client**
 
