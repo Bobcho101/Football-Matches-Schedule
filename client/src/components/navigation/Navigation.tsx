@@ -22,6 +22,9 @@ const Navigation: React.FC = () => {
             <button onClick={() => navigateToLeague('ligue-1')} className="px-6 py-3 text-lg cursor-pointer bg-green-300 text-gray-800 rounded-lg shadow-md hover:bg-green-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-200">
                 Ligue 1
             </button>
+            <button onClick={() => navigateToLeague('bundesliga')} className="px-6 py-3 text-lg cursor-pointer bg-orange-300 text-gray-800 rounded-lg shadow-md hover:bg-orange-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-green-200">
+                Bundesliga
+            </button>
         </div>
     );
 };
