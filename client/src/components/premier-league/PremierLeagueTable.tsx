@@ -12,7 +12,7 @@ const PremierLeagueTable: React.FC = () => {
     const { matches, loading, error } = useFetchMatches("PL");
 
      const validMatches = useMemo(() => {
-            return matches.filter((match) => match.homeTeam.shortName !== null && match.awayTeam.shortName !== null);
+        return matches.filter((match) => match.homeTeam.shortName !== null && match.awayTeam.shortName !== null);
     }, [matches]);
 
     return (
