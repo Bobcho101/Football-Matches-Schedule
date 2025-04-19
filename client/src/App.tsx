@@ -15,11 +15,8 @@ const App: React.FC = () => {
         <>
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/league/champions-league' element={<LeagueTable name='Champions League' backgroundImg='CL-bg' leagueId='CL' />} />
-            {/* <Route path='/league/champions-league' element={<ChampionsLeagueTable />} />
-            <Route path='/league/premier-league' element={<PremierLeagueTable />} />
-            <Route path='/league/la-liga' element={ <LaLigaTable />} />
-            <Route path='/league/ligue-1' element={<Ligue1Table />} /> */}
+            <Route path='/league/champions-league' element={<LeagueTable name='Champions League' backgroundImg='CL-bg' backgroundCover={true} leagueId='CL' />} />
+            <Route path='/league/premier-league' element={<LeagueTable name='Premier League' backgroundImg='premier-bg' backgroundCover={false} leagueId='PL' />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
         </>

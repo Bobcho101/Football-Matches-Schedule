@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import NoMatchesAvailable from "../no-matches-available/NoMatchesAvailable";
 import Navigation from "../navigation/Navigation";
 import LoadingSpinner from "../loading/LoadingSpinner";
@@ -11,15 +11,18 @@ type League = "CL" | "PL" | "PD" | "FL1";
 interface props {
     name: string;
     backgroundImg: string;
+    backgroundCover: boolean;
     leagueId: League;
 }
 
-const LeagueTable: React.FC<props> = ({ name, backgroundImg, leagueId }) =>  {
-    setDocumentTitle(name);
+const LeagueTable: React.FC<props> = ({ name, backgroundImg, backgroundCover, leagueId }) =>  {
     const { matches, loading, error } = useFetchMatches(leagueId);
-   
-    const validMatches = useMemo(() => {
-        return matches.filter((match) => match.homeTeam.shortName !== null && match.awayTeam.shortName !== null);
+    useEffect(() => {
+        setDocumentTitle(name);
+    },[name]);
+
+     const validMatches = useMemo(() => {
+            return matches.filter((match) => match.homeTeam.shortName !== null && match.awayTeam.shortName !== null);
     }, [matches]);
 
     return (
@@ -31,7 +34,7 @@ const LeagueTable: React.FC<props> = ({ name, backgroundImg, leagueId }) =>  {
             loading ? 
             <LoadingSpinner />
             : ( 
-            <div className={`p-6 bg-[url('/${backgroundImg}.jpg')] bg-cover bg-center min-h-screen`}>
+            <div className={`p-6 bg-[url('/${backgroundImg}.jpg')] ${backgroundCover && 'bg-cover bg-center'} min-h-screen`}>
                 <Navigation />
                 <h2 className="text-4xl font-extrabold mb-6 text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Upcoming Matches</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

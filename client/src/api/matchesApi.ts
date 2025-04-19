@@ -37,8 +37,6 @@ export const useFetchMatches = (league: League) => {
                 },
             })
             .then((response) => {
-                console.log(response);
-                
                 if(!response.ok){
                     throw new Error(errorMessages.failedFetch);
                 }
