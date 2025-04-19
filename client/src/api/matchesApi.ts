@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { API_KEY } from "../constants";
 import { errorMessages } from "../utils/errorMessages";
 
+
+type League = "CL" | "PL" | "PD" | "FL1";
+
 interface HomeTeam{
     shortName: string;
     id: number;
@@ -18,12 +21,12 @@ interface Match{
     utcDate: Date,
 }
 
-type League = "CL" | "PL" | "PD" | "FL1";
+
 
 export const useFetchMatches = (league: League) => {
-    const [matches, setMatches] = useState<Match[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const [ matches, setMatches ] = useState<Match[]>([]);
+    const [ loading, setLoading ] = useState<boolean>(true);
+    const [ error, setError ] = useState<string | null>(null);
 
     useEffect(() => {
         const url: string = `http://localhost:5000/matches/${league}/${API_KEY}`;
