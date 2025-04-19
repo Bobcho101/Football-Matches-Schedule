@@ -1,4 +1,5 @@
 # Football Matches Schedule
+# THE APP DOES NOT WORK BECAUSE OF THE DAMN CORS ERROR YOU CAN SEE THE CODE (I HATE THIS API)
 
 ## Description
 - **This is a web app that shows football matches schedule. There are 5 leagues: Champions League, Premier League, La Liga, Bundesliga and Ligue 1.**
