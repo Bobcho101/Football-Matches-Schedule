@@ -11,7 +11,7 @@
 - **I didn't do the API requests directly to the main API so because CORS error was thrown (*for no reason*) so i used a server that fetches the data and send it to the client**
 
 ## Deployed Version
-- [Football Matches Schedule](https://football-matches-schedule.herokuapp.com/)
+- [Football Matches Schedule](https://football-matches-schedule.vercel.app/)
 
 ## Functionality
 - **Home page with the routes for all leagues**
